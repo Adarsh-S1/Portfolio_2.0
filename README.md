@@ -100,7 +100,7 @@ My passion lies in hands-on engineering and innovation, covering the full spectr
 ---
 
 <div align="center">
-  <img src="assets/images/pirat.png" width="100" />
+  <img src="assets/images/pirate.png" width="100" />
   
   *“Exploring the treasures of AI and Robotics”*
 </div>
