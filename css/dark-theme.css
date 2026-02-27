@@ -54,20 +54,16 @@ body[data-theme="dark"] .page-wrapper {
     radial-gradient(ellipse at top right, rgba(26, 26, 26, 0.9) 0%, transparent 35%),
     radial-gradient(ellipse at bottom left, rgba(26, 26, 26, 0.9) 0%, transparent 35%),
     radial-gradient(ellipse at bottom right, rgba(26, 26, 26, 0.9) 0%, transparent 35%),
-    repeating-linear-gradient(
-      90deg,
+    repeating-linear-gradient(90deg,
       rgba(255, 255, 255, 0.05) 0px,
       rgba(255, 255, 255, 0.05) 1px,
       transparent 1px,
-      transparent 20px
-    ),
-    repeating-linear-gradient(
-      0deg,
+      transparent 20px),
+    repeating-linear-gradient(0deg,
       rgba(255, 255, 255, 0.05) 0px,
       rgba(255, 255, 255, 0.05) 1px,
       transparent 1px,
-      transparent 20px
-    ),
+      transparent 20px),
     var(--bg);
 }
 
@@ -262,7 +258,7 @@ body[data-theme="dark"] .footer-social-compact a:hover {
   background: var(--secondary);
 }
 
-body[data-theme="dark"] .language-item:hover {
+body[data-theme="dark"] .certificate-item:hover {
   background: var(--secondary);
 }
 

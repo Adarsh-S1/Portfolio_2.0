@@ -224,11 +224,11 @@ requestAnimationFrame(() => {
 });
 
 // Language Stars Parallax Effect
-const languageItems = document.querySelectorAll('.language-item');
+const languageItems = document.querySelectorAll('.certificate-item');
 const languageStarsData = new Map();
 
 languageItems.forEach(item => {
-    const stars = item.querySelectorAll('.language-stars .star');
+    const stars = item.querySelectorAll('.certificate-stars .star');
     languageStarsData.set(item, {
         hasStarted: false,
         startScroll: 0,

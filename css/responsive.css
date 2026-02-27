@@ -573,11 +573,11 @@
   }
 
   .education-card,
-  .languages-card {
+  .certificate-card {
     padding: 1.25rem;
   }
 
-  .language-item {
+  .certificate-item {
     padding: 0.65rem 0.85rem;
   }
 
@@ -596,15 +596,15 @@
     gap: 2rem;
   }
 
-  .language-item {
+  .certificate-item {
     padding: 0.6rem 0.9rem;
   }
 
-  .language-name-inline {
+  .certificate-name-inline {
     font-size: 0.9rem;
   }
 
-  .language-stars {
+  .certificate-stars {
     font-size: 0.85rem;
   }
 }
