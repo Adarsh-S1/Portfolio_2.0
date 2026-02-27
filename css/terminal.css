@@ -163,6 +163,27 @@ body {
   background-color: #27c93f;
 }
 
+.terminal-back-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  color: var(--text-dim);
+  text-decoration: none;
+  font-size: 0.75rem;
+  transition: all 0.2s ease;
+  margin-left: 12px;
+}
+
+.terminal-back-btn:hover {
+  color: var(--text-bright);
+  background: var(--terminal-highlight);
+  box-shadow: 0 0 8px var(--border-color);
+}
+
 .terminal-title {
   color: var(--text-dim);
   font-size: 14px;

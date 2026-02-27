@@ -217,6 +217,7 @@ class TerminalResume {
       "calc",
       "calculate",
       "pdf",
+      "exit",
     ];
 
     // Find matching commands
@@ -509,6 +510,11 @@ class TerminalResume {
         break;
       case "":
         break;
+      case "exit":
+      case "quit":
+        this.printToOutput(outputElement, "👋 Goodbye! Returning to portfolio...", "success");
+        setTimeout(() => { window.location.href = 'index.html'; }, 800);
+        break;
       default:
         this.printToOutput(
           outputElement,
@@ -580,7 +586,10 @@ class TerminalResume {
       this.wrapWithColor("Get my contact information\n", "#ffffff") +
       this.wrapWithColor("• clear", "#98fb98") +
       "      " +
-      this.wrapWithColor("Clear the terminal screen\n", "#ffffff");
+      this.wrapWithColor("Clear the terminal screen\n", "#ffffff") +
+      this.wrapWithColor("• exit", "#98fb98") +
+      "       " +
+      this.wrapWithColor("Return to portfolio page\n", "#ffffff");
 
     const utilityCommands =
       "\n" +
