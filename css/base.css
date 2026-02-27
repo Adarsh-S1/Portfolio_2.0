@@ -1,0 +1,174 @@
+/* ========================================
+   Base: Reset, Variables, Body, Scrollbar
+   ======================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --bg: #ffffff;
+  --text: #000000;
+  --border: #000000;
+  --primary: #66d9ef;
+  --secondary: #ffd93d;
+  --accent: #a8e6cf;
+  --pink: #ff6b9d;
+  --white: #FFFFFF;
+  --yellow: #ffd93d;
+  --cyan: #66d9ef;
+  --shadow-offset: 4px;
+  --border-width: 3px;
+}
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  background: #d0d0d0;
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.page-wrapper {
+  padding-top: 16px;
+  background:
+    radial-gradient(ellipse at top left, rgba(255, 255, 255, 0.9) 0%, transparent 35%),
+    radial-gradient(ellipse at top right, rgba(255, 255, 255, 0.9) 0%, transparent 35%),
+    radial-gradient(ellipse at bottom left, rgba(255, 255, 255, 0.9) 0%, transparent 35%),
+    radial-gradient(ellipse at bottom right, rgba(255, 255, 255, 0.9) 0%, transparent 35%),
+    repeating-linear-gradient(
+      90deg,
+      #f0f0f0 0px,
+      #f0f0f0 1px,
+      transparent 1px,
+      transparent 20px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      #f0f0f0 0px,
+      #f0f0f0 1px,
+      transparent 1px,
+      transparent 20px
+    ),
+    var(--bg);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 20px 20px, 20px 20px, 100%;
+  border: 6px solid var(--border);
+  box-shadow: 12px 12px 0 var(--border);
+  max-width: 1400px;
+  margin: 0 auto 20px;
+  min-height: calc(100vh - 40px);
+  overflow: visible;
+  position: relative;
+}
+
+
+/* Neo-brutalist Scrollbars */
+::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--white);
+  border-left: 3px solid #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--yellow);
+  border: 3px solid #000;
+  border-radius: 0;
+  box-shadow: 3px 0 0 #000;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--cyan);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: var(--pink);
+  box-shadow: none;
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--white);
+  border-left: 3px solid #000;
+  border-top: 3px solid #000;
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: var(--yellow) var(--white);
+}
+
+/* Custom Scrollbar - Brutalism Style */
+body::-webkit-scrollbar {
+  width: 16px;
+  background: #d0d0d0;
+}
+
+body::-webkit-scrollbar-track {
+  background: #d0d0d0;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border: 3px solid var(--border);
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: #333;
+}
+
+/* Firefox Scrollbar */
+body {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) #d0d0d0;
+}
+
+body[data-theme="dark"]::-webkit-scrollbar {
+  background: #0a0a0a;
+}
+
+body[data-theme="dark"]::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+body[data-theme="dark"]::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border: 3px solid var(--border);
+}
+
+body[data-theme="dark"] {
+  scrollbar-color: var(--border) #0a0a0a;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section, .timeline-item, .skill-box {
+  opacity: 0;
+  animation: none;
+}
+
+.section.fade-in, .timeline-item.fade-in, .skill-box.fade-in {
+  animation: fadeInUp 0.6s ease forwards;
+}

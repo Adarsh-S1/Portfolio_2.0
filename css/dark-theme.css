@@ -1,0 +1,276 @@
+/* ========================================
+   Dark Theme Overrides
+   ======================================== */
+
+body[data-theme="dark"] {
+  --bg: #1a1a1a;
+  --text: #ffffff;
+  --border: #a8e6cf;
+  --white: #2a2a2a;
+  background: #0a0a0a;
+}
+
+body[data-theme="dark"] .progress-bar-container {
+  background: var(--bg);
+}
+
+body[data-theme="dark"] .checkpoint.active .checkpoint-dot {
+  background: var(--secondary);
+}
+
+body[data-theme="dark"] ::-webkit-scrollbar-track {
+  background: var(--bg);
+  border-left: 3px solid var(--border);
+}
+
+body[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: var(--secondary);
+  border: 3px solid var(--border);
+  box-shadow: 3px 0 0 var(--border);
+}
+
+body[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+  background: var(--pink);
+}
+
+body[data-theme="dark"] ::-webkit-scrollbar-thumb:active {
+  background: var(--cyan);
+  box-shadow: none;
+}
+
+body[data-theme="dark"] ::-webkit-scrollbar-corner {
+  background: var(--bg);
+  border-left: 3px solid var(--border);
+  border-top: 3px solid var(--border);
+}
+
+body[data-theme="dark"] * {
+  scrollbar-color: var(--secondary) var(--bg);
+}
+
+body[data-theme="dark"] .page-wrapper {
+  background:
+    radial-gradient(ellipse at top left, rgba(26, 26, 26, 0.9) 0%, transparent 35%),
+    radial-gradient(ellipse at top right, rgba(26, 26, 26, 0.9) 0%, transparent 35%),
+    radial-gradient(ellipse at bottom left, rgba(26, 26, 26, 0.9) 0%, transparent 35%),
+    radial-gradient(ellipse at bottom right, rgba(26, 26, 26, 0.9) 0%, transparent 35%),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.05) 0px,
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 1px,
+      transparent 20px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.05) 0px,
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 1px,
+      transparent 20px
+    ),
+    var(--bg);
+}
+
+body[data-theme="dark"] .navbar {
+  background: #2a2a2a;
+}
+
+body[data-theme="dark"] .hero {
+  background: transparent;
+}
+
+body[data-theme="dark"] .page-gap {
+  background: #0a0a0a;
+}
+
+body[data-theme="dark"] .paper-tear svg path[fill="#d0d0d0"] {
+  fill: #0a0a0a;
+}
+
+body[data-theme="dark"] .paper-tear svg path[fill="#ffffff"] {
+  fill: #1a1a1a;
+}
+
+body[data-theme="dark"] .tape-sticker {
+  background: rgba(255, 217, 61, 0.6);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+body[data-theme="dark"] .theme-toggle {
+  background: var(--secondary);
+}
+
+body[data-theme="dark"] .section-title {
+  background: var(--primary);
+  color: var(--text);
+}
+
+body[data-theme="dark"] .highlight-box {
+  background: var(--accent);
+}
+
+body[data-theme="dark"] .timeline-marker {
+  background: var(--secondary);
+}
+
+body[data-theme="dark"] .timeline-header {
+  background: var(--white);
+}
+
+body[data-theme="dark"] .badge {
+  background: var(--secondary);
+  color: var(--bg);
+}
+
+body[data-theme="dark"] .language-icon i {
+  color: var(--primary);
+}
+
+body[data-theme="dark"] .btn-primary {
+  background: var(--primary);
+  color: var(--bg);
+}
+
+body[data-theme="dark"] .btn-secondary {
+  background: var(--white);
+  color: var(--text);
+}
+
+body[data-theme="dark"] .btn-terminal {
+  background: var(--terminal);
+  color: var(--text);
+}
+
+body[data-theme="dark"] .social-icon {
+  background: var(--secondary);
+  color: var(--bg);
+}
+
+body[data-theme="dark"] .avatar {
+  box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--primary);
+}
+
+body[data-theme="dark"] .skill-icon-large {
+  color: var(--secondary);
+}
+
+body[data-theme="dark"] .highlight-box .skill-icon-large {
+  color: var(--bg);
+}
+
+body[data-theme="dark"] .job-title i {
+  color: var(--secondary);
+}
+
+body[data-theme="dark"] .company i {
+  color: var(--primary);
+}
+
+body[data-theme="dark"] .job-desc i {
+  color: var(--accent);
+}
+
+body[data-theme="dark"] .hero {
+  background-color: var(--white);
+}
+
+body[data-theme="dark"] .hero-tagline {
+  color: var(--secondary);
+}
+
+body[data-theme="dark"] .coffee-arrow-text {
+  color: var(--text);
+}
+
+body[data-theme="dark"] .coffee-arrow-img {
+  filter: invert(1) brightness(1.5);
+}
+
+body[data-theme="dark"] .map-header i {
+  color: var(--secondary);
+}
+
+body[data-theme="dark"] .location-pin {
+  background: var(--secondary);
+}
+
+body[data-theme="dark"] .journey-item:hover {
+  background: var(--secondary);
+}
+
+body[data-theme="dark"] .stat-card:hover {
+  background: var(--primary);
+}
+
+body[data-theme="dark"] .stat-number {
+  color: var(--secondary);
+}
+
+body[data-theme="dark"] .neo-marker-pin {
+  background: var(--secondary);
+}
+
+body[data-theme="dark"] .neo-marker-pin-current {
+  background: var(--secondary);
+}
+
+body[data-theme="dark"] .neo-marker-label {
+  background: var(--secondary);
+}
+
+body[data-theme="dark"] .leaflet-popup-content-wrapper {
+  background: var(--white);
+}
+
+body[data-theme="dark"] .map-popup {
+  background: var(--white);
+}
+
+body[data-theme="dark"] .map-popup-country {
+  background: var(--secondary);
+}
+
+body[data-theme="dark"] .map-popup-company span {
+  background: var(--pink);
+}
+
+body[data-theme="dark"] .contact-card:nth-child(1) {
+  background: #66d9ef;
+}
+
+body[data-theme="dark"] .contact-card:nth-child(2) {
+  background: #ffd93d;
+}
+
+body[data-theme="dark"] .contact-card:nth-child(3) {
+  background: #ff6b9d;
+}
+
+body[data-theme="dark"] .contact-card::before {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+body[data-theme="dark"] .contact-card i {
+  color: var(--text);
+}
+
+body[data-theme="dark"] .footer-nav-compact a:hover {
+  color: var(--secondary);
+}
+
+body[data-theme="dark"] .footer-social-compact a:hover {
+  background: var(--secondary);
+}
+
+body[data-theme="dark"] .language-item:hover {
+  background: var(--secondary);
+}
+
+/* Dark mode for projects */
+body[data-theme="dark"] .creator-project {
+  background: #3a3a3a;
+}
+
+body[data-theme="dark"] .nav-lazyfire {
+  background: #3a3a3a;
+}
