@@ -634,36 +634,3 @@ checkpoints.forEach(checkpoint => {
 window.addEventListener('scroll', updateProgressBar);
 window.addEventListener('resize', updateProgressBar);
 updateProgressBar();
-
-// Certificate Viewer Modal
-const certModal = document.getElementById('cert-modal');
-const certIframe = document.getElementById('cert-modal-iframe');
-const certTitle = document.getElementById('cert-modal-title');
-const certDownload = document.getElementById('cert-modal-download');
-const certClose = document.getElementById('cert-modal-close');
-
-document.querySelectorAll('.certificate-item[data-cert]').forEach(item => {
-    item.addEventListener('click', () => {
-        const pdfPath = item.getAttribute('data-cert');
-        const name = item.querySelector('.certificate-name-inline').textContent;
-        certIframe.src = pdfPath;
-        certTitle.textContent = name;
-        certDownload.href = pdfPath;
-        certModal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    });
-});
-
-function closeCertModal() {
-    certModal.classList.remove('active');
-    certIframe.src = '';
-    document.body.style.overflow = '';
-}
-
-certClose.addEventListener('click', closeCertModal);
-certModal.addEventListener('click', (e) => {
-    if (e.target === certModal) closeCertModal();
-});
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && certModal.classList.contains('active')) closeCertModal();
-});
