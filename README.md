@@ -12,6 +12,9 @@
   [![Email](https://img.shields.io/badge/Email-Contact-red?style=for-the-badge&logo=gmail)](mailto:adarshs112004@gmail.com)
 
   <img src="assets/images/caffe-icon.gif" width="50" />
+  
+  ## [Live Site](https://adarsh-s.netlify.app/) 
+  
 </div>
 
 ---
