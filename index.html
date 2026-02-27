@@ -627,28 +627,57 @@
                     <div class="certificate-column">
                         <h2 class="section-title">CERTIFICATIONS</h2>
                         <div class="card certificate-card">
-                            <div class="certificate-item">
+                            <button class="certificate-item"
+                                data-cert="assets/certification/Introduction To Machine Learning - IITKGP.pdf"
+                                type="button">
                                 <span class="certificate-name-inline">ML — NPTEL (IIT KGP)</span>
                                 <div class="certificate-stars">
                                     <span class="star filled"></span>
                                     <span class="star filled"></span>
                                     <span class="star filled"></span>
                                 </div>
-                            </div>
-                            <div class="certificate-item">
+                                <i class="fas fa-external-link-alt cert-view-icon"></i>
+                            </button>
+                            <button class="certificate-item" data-cert="assets/certification/flutter_certificate.pdf"
+                                type="button">
                                 <span class="certificate-name-inline">Flutter Development</span>
                                 <div class="certificate-stars">
                                     <span class="star filled"></span>
                                     <span class="star filled"></span>
                                     <span class="star filled"></span>
                                 </div>
-                            </div>
-                            <div class="certificate-item">
+                                <i class="fas fa-external-link-alt cert-view-icon"></i>
+                            </button>
+                            <button class="certificate-item" data-cert="assets/certification/Ethical Hacking.pdf"
+                                type="button">
                                 <span class="certificate-name-inline">Ethical Hacking — NPTEL</span>
                                 <div class="certificate-stars">
                                     <span class="star filled"></span>
                                     <span class="star filled"></span>
                                     <span class="star"></span>
+                                </div>
+                                <i class="fas fa-external-link-alt cert-view-icon"></i>
+                            </button>
+                        </div>
+
+                        <!-- Certificate Viewer Modal -->
+                        <div class="cert-modal-overlay" id="cert-modal">
+                            <div class="cert-modal">
+                                <div class="cert-modal-header">
+                                    <span class="cert-modal-title" id="cert-modal-title">Certificate</span>
+                                    <div class="cert-modal-actions">
+                                        <a class="cert-modal-download" id="cert-modal-download" href="#" download
+                                            title="Download PDF">
+                                            <i class="fas fa-download"></i>
+                                        </a>
+                                        <button class="cert-modal-close" id="cert-modal-close" type="button"
+                                            aria-label="Close">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="cert-modal-body">
+                                    <iframe id="cert-modal-iframe" src="" title="Certificate viewer"></iframe>
                                 </div>
                             </div>
                         </div>
