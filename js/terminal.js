@@ -527,26 +527,36 @@ class TerminalResume {
   }
 
   printWelcomeMessage(outputElement = this.output) {
-    const asciiArt = ` █████╗ ██████╗  █████╗ ██████╗ ███████╗██╗  ██╗
+    const isMobile = window.innerWidth < 500;
+
+    let asciiArt, divider, subtitle, tagline;
+
+    if (isMobile) {
+      asciiArt = `┌──────────────────────┐
+│  ╔═╗╔╦╗╔═╗╦═╗╔═╗╦ ╦ │
+│  ╠═╣ ║║╠═╣╠╦╝╚═╗╠═╣ │
+│  ╩ ╩═╩╝╩ ╩╩╚═╚═╝╩ ╩ │
+└──────────────────────┘`;
+      divider = "──────────────────────────";
+      subtitle = "  Interactive Terminal Resume\n";
+      tagline = "  AI • Robotics • IoT\n";
+    } else {
+      asciiArt = ` █████╗ ██████╗  █████╗ ██████╗ ███████╗██╗  ██╗
 ██╔══██╗██╔══██╗██╔══██╗██╔══██╗██╔════╝██║  ██║
 ███████║██║  ██║███████║██████╔╝███████╗███████║
 ██╔══██║██║  ██║██╔══██║██╔══██╗╚════██║██╔══██║
 ██║  ██║██████╔╝██║  ██║██║  ██║███████║██║  ██║
 ╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝`;
-
-    const divider = "─────────────────────────────────────────────────";
+      divider = "─────────────────────────────────────────────────";
+      subtitle = "              Interactive Terminal Resume\n";
+      tagline = "         AI & Data Science • Robotics • IoT\n";
+    }
 
     const welcome =
       this.wrapWithColor(asciiArt + "\n", "#d4843e") +
       this.wrapWithColor(divider + "\n", "#555555") +
-      this.wrapWithColor(
-        "              Interactive Terminal Resume\n",
-        "#888888"
-      ) +
-      this.wrapWithColor(
-        "         AI & Data Science • Robotics • IoT\n",
-        "#666666"
-      ) +
+      this.wrapWithColor(subtitle, "#888888") +
+      this.wrapWithColor(tagline, "#666666") +
       this.wrapWithColor(divider + "\n\n", "#555555") +
       this.wrapWithColor("Type ", "#666666") +
       this.wrapWithColor("'help'", "#87af87") +
