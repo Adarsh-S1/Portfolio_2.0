@@ -3,6 +3,9 @@ gb/spray-*
 
 # Node modules
 node_modules/
+dist/
+.vite/
+build/
 
 # MacOS
 .DS_Store
@@ -11,4 +14,4 @@ node_modules/
 .vscode/
 .idea/
 
-
+react-conversion-prompt.md
