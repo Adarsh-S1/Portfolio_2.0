@@ -56,7 +56,7 @@ export const ProgressBar = () => {
             onClick={() => scrollToSection(cp.section)}
           >
             <div className="checkpoint-dot"></div>
-            <span className="checkpoint-label">{cp.label}</span>
+            <span className="checkpoint-label"></span>
           </div>
         ))}
       </div>

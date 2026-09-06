@@ -23,7 +23,7 @@ export const Footer = () => {
             <a href="#experience" onClick={(e) => { e.preventDefault(); scrollTo('experience'); }}>Projects</a>
             <a href="#skills" onClick={(e) => { e.preventDefault(); scrollTo('skills'); }}>Skills</a>
           </div>
-          <div className="footer-social-compact">
+          {/* <div className="footer-social-compact">
             <a href="https://github.com/Adarsh-S1" target="_blank" rel="noopener noreferrer" title="GitHub">
               <i className="fab fa-github"></i>
             </a>
@@ -33,7 +33,7 @@ export const Footer = () => {
             <a href="mailto:adarshs112004@gmail.com" title="Email">
               <i className="fas fa-envelope"></i>
             </a>
-          </div>
+          </div> */}
         </div>
         <div className="footer-bottom-compact">
           <span>&copy; {new Date().getFullYear()} Adarsh S</span>
