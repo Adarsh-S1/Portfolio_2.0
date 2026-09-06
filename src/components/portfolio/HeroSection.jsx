@@ -136,7 +136,7 @@ export const HeroSection = () => {
         <span className="tech-badge"><i className="fab fa-java"></i> Java</span>
         <span className="tech-badge"><i className="fas fa-mobile-alt"></i> Flutter</span>
         <span className="tech-badge"><i className="fas fa-flask"></i> Flask</span>
-        <span className="tech-badge"><i class="fas fa-leaf"></i> MongoDB</span>
+        <span className="tech-badge"><i className="fas fa-leaf"></i> MongoDB</span>
         <span className="tech-badge"><i className="fas fa-fire"></i> Firebase</span>
         <span className="tech-badge"><i className="fab fa-docker"></i> Docker</span>
       </div>

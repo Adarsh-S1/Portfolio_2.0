@@ -6,6 +6,18 @@
    Base: Reset, Variables, Body, Scrollbar
    ======================================== */
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 :root {
   --bg: #ffffff;
   --text: #000000;
@@ -39,7 +51,14 @@ body {
   min-height: 100vh;
   margin: 0;
   padding: 20px;
+  overflow-x: hidden;
   overflow-y: auto;
+  max-width: 100%;
+}
+
+#root {
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 /* Page Wrapper with Radial Gradient & 20px Grid Background */
@@ -149,8 +168,7 @@ body[data-theme="dark"]::-webkit-scrollbar-track {
 
 .loader-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   background: var(--yellow);
@@ -160,6 +178,7 @@ body[data-theme="dark"]::-webkit-scrollbar-track {
   justify-content: center;
   gap: 3rem;
   z-index: 99999;
+  overflow: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
@@ -192,8 +211,12 @@ body[data-theme="dark"]::-webkit-scrollbar-track {
   display: flex;
   gap: 1.5rem;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   position: relative;
   z-index: 2;
+  max-width: 100%;
+  padding: 0 1rem;
 }
 
 .loader-letter {
@@ -665,11 +688,13 @@ body[data-theme="dark"] .tear-tape-sticker {
 .hero-image-wrapper {
   position: relative;
   display: inline-block;
+  max-width: 100%;
 }
 
 .hero-photo {
   width: 400px;
   height: 400px;
+  max-width: 100%;
   object-fit: cover;
   border: var(--border-width) solid var(--border);
   box-shadow: 8px 8px 0 var(--border);
@@ -1293,7 +1318,7 @@ body[data-theme="dark"] .neo-marker-label {
   transition: all 0.3s ease;
   grid-column: span 2;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .skill-box::before {
@@ -1331,6 +1356,7 @@ body[data-theme="dark"] .neo-marker-label {
   border-bottom: 4px solid var(--border);
   position: relative;
   z-index: 1;
+  min-width: 0;
 }
 
 .skill-icon-large {
@@ -1350,6 +1376,10 @@ body[data-theme="dark"] .neo-marker-label {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: -0.5px;
+  min-width: 0;
+  flex: 1;
+  overflow-wrap: anywhere;
+  line-height: 1.25;
 }
 
 .skill-box .tech-tags {
@@ -1775,5 +1805,119 @@ body[data-theme="dark"] .creator-project {
   .skill-box,
   .skill-box:nth-child(5) {
     grid-column: span 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .loader-letter {
+    font-size: 2.75rem;
+    width: 70px;
+    height: 70px;
+    border-width: 3px;
+    box-shadow: 4px 4px 0 var(--border);
+  }
+
+  .loader-wrapper {
+    gap: 0.75rem;
+  }
+
+  .loader-progress-bar {
+    width: 180px;
+    height: 14px;
+  }
+
+  .skill-box-title {
+    font-size: 1.05rem;
+  }
+
+  .skill-icon-large {
+    font-size: 2rem;
+  }
+
+  .nav-cta {
+    padding: 0.35rem 0.6rem;
+    font-size: 0.75rem;
+  }
+
+  .terminal-title-text {
+    display: none;
+  }
+}
+
+/* Terminal page: isolate from portfolio body padding / overflow */
+html.terminal-mode,
+body.terminal-mode {
+  padding: 0 !important;
+  margin: 0;
+  overflow: hidden;
+  background: #000 !important;
+  max-width: 100%;
+  height: 100%;
+}
+
+body.terminal-mode #root {
+  height: 100dvh;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 0;
+}
+
+.terminal-app {
+  width: 100%;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #000;
+}
+
+.terminal-window {
+  width: 96vw;
+  height: 92vh;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 4px solid #000;
+  box-shadow: 12px 12px 0 #000;
+}
+
+.terminal-window-header {
+  min-width: 0;
+}
+
+.terminal-window-header .terminal-title-text {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.terminal-window-body {
+  min-width: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  word-break: break-word;
+}
+
+.terminal-ascii {
+  max-width: 100%;
+  overflow: hidden;
+  white-space: pre;
+  line-height: 1.1;
+}
+
+@media (max-width: 768px) {
+  .terminal-window {
+    width: 100%;
+    height: 100dvh;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .terminal-window-body {
+    padding: 1rem;
   }
 }

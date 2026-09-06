@@ -2,12 +2,18 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, Palette, X } from 'lucide-react';
 
-const asciiArt = ` █████╗ ██████╗  █████╗ ██████╗ ███████╗██╗  ██╗
+const asciiArtDesktop = ` █████╗ ██████╗  █████╗ ██████╗ ███████╗██╗  ██╗
 ██╔══██╗██╔══██╗██╔══██╗██╔══██╗██╔════╝██║  ██║
 ███████║██║  ██║███████║██████╔╝███████╗███████║
 ██╔══██║██║  ██║██╔══██║██╔══██╗╚════██║██╔══██║
 ██║  ██║██████╔╝██║  ██║██║  ██║███████║██║  ██║
 ╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝`;
+
+const asciiArtMobile = `┌──────────────────────┐
+│  ╔═╗╔╦╗╔═╗╦═╗╔═╗╦ ╦ │
+│  ╠═╣ ║║╠═╣╠╦╝╚═╗╠═╣ │
+│  ╩ ╩═╩╝╩ ╩╩╚═╚═╝╩ ╩ │
+└──────────────────────┘`;
 
 export const TerminalPage = () => {
   const navigate = useNavigate();
@@ -22,21 +28,34 @@ export const TerminalPage = () => {
   const inputRef = useRef(null);
   const containerRef = useRef(null);
 
-  // Initial welcome message
   useEffect(() => {
+    document.body.classList.add('terminal-mode');
+    document.documentElement.classList.add('terminal-mode');
+    return () => {
+      document.body.classList.remove('terminal-mode');
+      document.documentElement.classList.remove('terminal-mode');
+    };
+  }, []);
+
+  useEffect(() => {
+    const mobile = window.innerWidth < 500;
+    const ascii = mobile ? asciiArtMobile : asciiArtDesktop;
+    const divider = mobile ? '──────────────────────────' : '─────────────────────────────────────────────────';
+    const tagline = mobile ? 'AI • Robotics • IoT' : 'AI & Data Science • Robotics • IoT';
+
     setOutputs([
       {
         id: 'welcome',
         type: 'welcome',
         content: (
-          <div className="space-y-2 mb-4 font-mono">
-            <pre className="text-amber-500 font-bold text-xs sm:text-sm overflow-x-auto leading-tight">
-              {asciiArt}
+          <div className="space-y-2 mb-4 font-mono min-w-0">
+            <pre className="terminal-ascii text-[#d4843e] font-bold text-[10px] sm:text-sm">
+              {ascii}
             </pre>
-            <div className="text-zinc-500">─────────────────────────────────────────</div>
+            <div className="text-zinc-500 break-all">{divider}</div>
             <div className="text-zinc-400 font-bold">Interactive Terminal Resume</div>
-            <div className="text-zinc-500">AI & Data Science • Robotics • IoT</div>
-            <div className="text-zinc-500">─────────────────────────────────────────</div>
+            <div className="text-zinc-500">{tagline}</div>
+            <div className="text-zinc-500 break-all">{divider}</div>
             <div className="text-zinc-300 mt-2">
               Type <span className="text-emerald-400 font-bold">'help'</span> for available commands | Press <span className="text-emerald-400 font-bold">'tab'</span> for auto-complete
             </div>
@@ -75,7 +94,7 @@ export const TerminalPage = () => {
           content: (
             <div className="space-y-3 font-mono text-sm py-2">
               <div className="text-yellow-300 font-bold">🚀 Available Commands:</div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-zinc-200">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-zinc-200 break-words">
                 <div><span className="text-emerald-400 font-bold">help</span> - Show this help message</div>
                 <div><span className="text-emerald-400 font-bold">about</span> - Professional summary</div>
                 <div><span className="text-emerald-400 font-bold">skills</span> - Technical expertise</div>
@@ -252,21 +271,20 @@ export const TerminalPage = () => {
   }[theme];
 
   return (
-    <div className="min-h-screen bg-[#121212] p-4 sm:p-8 flex flex-col font-mono selection:bg-[#00ff66] selection:text-black">
-      <div className={`max-w-5xl w-full mx-auto flex-1 flex flex-col border-4 border-black shadow-[12px_12px_0px_#000] overflow-hidden ${themeClasses}`}>
-        {/* Terminal Header */}
-        <div className="bg-zinc-800 text-white px-4 py-3 border-b-4 border-black flex items-center justify-between">
-          <div className="flex items-center gap-2">
+    <div className="terminal-app font-mono selection:bg-[#00ff66] selection:text-black">
+      <div className={`terminal-window ${themeClasses}`}>
+        <div className="terminal-window-header bg-zinc-800 text-white px-3 sm:px-4 py-3 border-b-4 border-black flex items-center justify-between gap-2">
+          <div className="flex items-center gap-2 shrink-0">
             <span className="w-3 h-3 rounded-full bg-rose-500 border border-black inline-block" />
             <span className="w-3 h-3 rounded-full bg-amber-500 border border-black inline-block" />
             <span className="w-3 h-3 rounded-full bg-emerald-500 border border-black inline-block" />
           </div>
 
-          <div className="font-bold text-xs sm:text-sm tracking-wide text-zinc-300">
+          <div className="terminal-title-text font-bold text-xs sm:text-sm tracking-wide text-zinc-300">
             adarsh@portfolio: ~/resume
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 shrink-0">
             <button
               onClick={() => setThemeModalOpen(true)}
               title="Change Theme"
@@ -284,11 +302,10 @@ export const TerminalPage = () => {
           </div>
         </div>
 
-        {/* Terminal Screen Body */}
         <div
           ref={containerRef}
           onClick={() => inputRef.current?.focus()}
-          className="flex-1 p-6 overflow-y-auto space-y-3 font-mono text-sm leading-relaxed"
+          className="terminal-window-body flex-1 p-4 sm:p-6 space-y-3 font-mono text-sm leading-relaxed"
         >
           {matrixActive && (
             <div className="p-3 bg-emerald-950/40 border border-emerald-500/40 text-emerald-400 font-mono text-xs animate-pulse mb-4">
