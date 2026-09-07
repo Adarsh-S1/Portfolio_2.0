@@ -1,8 +1,39 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
 export const AboutSection = () => {
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const highlights = sectionRef.current?.querySelectorAll('.highlight');
+    if (!highlights?.length) return undefined;
+
+    highlights.forEach((highlight, index) => {
+      highlight.dataset.direction = index % 2 === 0 ? 'left' : 'right';
+    });
+
+    const updateHighlights = () => {
+      const scrollY = window.scrollY;
+      const triggerPoint = scrollY + window.innerHeight * 0.8;
+
+      highlights.forEach((highlight) => {
+        const elementTop = highlight.getBoundingClientRect().top + scrollY;
+        const progress = Math.min(1, Math.max(0, (triggerPoint - elementTop) / 100));
+        highlight.style.setProperty('--highlight-progress', `${progress * 100}%`);
+      });
+    };
+
+    window.addEventListener('scroll', updateHighlights, { passive: true });
+    window.addEventListener('resize', updateHighlights);
+    updateHighlights();
+
+    return () => {
+      window.removeEventListener('scroll', updateHighlights);
+      window.removeEventListener('resize', updateHighlights);
+    };
+  }, []);
+
   return (
-    <section className="section" id="about">
+    <section className="section" id="about" ref={sectionRef}>
       <h2 className="section-title">ABOUT</h2>
       <div className="card">
         <p className="text">

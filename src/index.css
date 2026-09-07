@@ -35,14 +35,6 @@ html {
   --danger: #ff6b6b;
 }
 
-body[data-theme="dark"] {
-  --bg: #1a1a1a;
-  --text: #ffffff;
-  --border: #a8e6cf;
-  --white: #2a2a2a;
-  background: #0a0a0a;
-}
-
 body {
   font-family: 'Space Grotesk', sans-serif;
   background: #d0d0d0;
@@ -94,25 +86,6 @@ body {
   position: relative;
 }
 
-body[data-theme="dark"] .page-wrapper {
-  background:
-    radial-gradient(ellipse at top left, rgba(26, 26, 26, 0.9) 0%, transparent 35%),
-    radial-gradient(ellipse at top right, rgba(26, 26, 26, 0.9) 0%, transparent 35%),
-    radial-gradient(ellipse at bottom left, rgba(26, 26, 26, 0.9) 0%, transparent 35%),
-    radial-gradient(ellipse at bottom right, rgba(26, 26, 26, 0.9) 0%, transparent 35%),
-    repeating-linear-gradient(90deg,
-      rgba(255, 255, 255, 0.05) 0px,
-      rgba(255, 255, 255, 0.05) 1px,
-      transparent 1px,
-      transparent 20px),
-    repeating-linear-gradient(0deg,
-      rgba(255, 255, 255, 0.05) 0px,
-      rgba(255, 255, 255, 0.05) 1px,
-      transparent 1px,
-      transparent 20px),
-    var(--bg);
-}
-
 /* Neo-brutalist Scrollbars */
 ::-webkit-scrollbar {
   width: 16px;
@@ -152,14 +125,6 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   background: var(--border);
   border: 3px solid var(--border);
-}
-
-body[data-theme="dark"]::-webkit-scrollbar {
-  background: #0a0a0a;
-}
-
-body[data-theme="dark"]::-webkit-scrollbar-track {
-  background: #0a0a0a;
 }
 
 /* ========================================
@@ -349,9 +314,6 @@ body[data-theme="dark"]::-webkit-scrollbar-track {
   box-shadow: 0 0 0 3px var(--white);
 }
 
-body[data-theme="dark"] .progress-bar-container { background: var(--bg); }
-body[data-theme="dark"] .checkpoint.active .checkpoint-dot { background: var(--secondary); }
-
 /* ========================================
    Navbar
    ======================================== */
@@ -365,10 +327,6 @@ body[data-theme="dark"] .checkpoint.active .checkpoint-dot { background: var(--s
   top: 15px;
   margin: 15px 15px 0;
   transition: transform 0.3s ease;
-}
-
-body[data-theme="dark"] .navbar {
-  background: #2a2a2a;
 }
 
 .navbar.navbar-hidden {
@@ -449,28 +407,6 @@ body[data-theme="dark"] .navbar {
   box-shadow: 0 0 0 var(--border);
 }
 
-.theme-toggle-nav {
-  padding: 0.5rem 1rem;
-  background: var(--cyan);
-  border: var(--border-width) solid var(--border);
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--text);
-  min-height: 40px;
-  transition: all 0.2s ease;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 3px 3px 0 0 var(--border);
-}
-
-.theme-toggle-nav:hover {
-  transform: translate(3px, 3px);
-  box-shadow: 0 0 0 var(--border);
-}
-
 /* ========================================
    Paper Tear Gap & Parallax Effect
    ======================================== */
@@ -508,24 +444,12 @@ body[data-theme="dark"] .navbar {
   transition: opacity 0.1s ease-out;
 }
 
-body[data-theme="dark"] .paper-tear svg path[fill="#d0d0d0"] {
-  fill: #0a0a0a;
-}
-
-body[data-theme="dark"] .paper-tear svg path[fill="#ffffff"] {
-  fill: #1a1a1a;
-}
-
 .page-gap {
   width: 100%;
   height: 300px;
   background: #d0d0d0;
   position: relative;
   transition: height 0.1s ease-out;
-}
-
-body[data-theme="dark"] .page-gap {
-  background: #0a0a0a;
 }
 
 .tear-tape-sticker {
@@ -544,11 +468,6 @@ body[data-theme="dark"] .page-gap {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   pointer-events: none;
   transition: transform 0.1s ease-out, opacity 0.1s ease-out;
-}
-
-body[data-theme="dark"] .tear-tape-sticker {
-  background: rgba(255, 217, 61, 0.6);
-  border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 .tear-tape-sticker::before {
@@ -1006,10 +925,6 @@ body[data-theme="dark"] .tear-tape-sticker {
   z-index: 10;
 }
 
-body[data-theme="dark"] .timeline-header {
-  background: var(--white);
-}
-
 .timeline-list {
   display: flex;
   flex-direction: column;
@@ -1202,12 +1117,6 @@ body[data-theme="dark"] .timeline-header {
   font-size: 11px;
   padding: 4px 10px;
   box-shadow: 4px 4px 0 var(--border);
-}
-
-body[data-theme="dark"] .neo-marker-pin,
-body[data-theme="dark"] .neo-marker-pin-current,
-body[data-theme="dark"] .neo-marker-label {
-  background: var(--secondary);
 }
 
 .leaflet-popup-content-wrapper {
@@ -1444,10 +1353,6 @@ body[data-theme="dark"] .neo-marker-label {
   text-decoration: none;
   transition: all 0.2s ease;
   margin-bottom: 1rem;
-}
-
-body[data-theme="dark"] .creator-project {
-  background: #3a3a3a;
 }
 
 .creator-project:hover {

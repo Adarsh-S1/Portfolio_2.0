@@ -519,18 +519,6 @@
   50% { transform: translateY(-5px) scale(1.1); }
 }
 
-body[data-theme="dark"] .neo-marker-pin {
-  background: var(--secondary);
-}
-
-body[data-theme="dark"] .neo-marker-pin-current {
-  background: var(--secondary);
-}
-
-body[data-theme="dark"] .neo-marker-label {
-  background: var(--secondary);
-}
-
 /* Leaflet controls styling */
 .leaflet-control-zoom {
   border: none !important;

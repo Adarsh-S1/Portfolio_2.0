@@ -70,12 +70,6 @@
     min-height: 36px;
   }
 
-  .theme-toggle-nav {
-    padding: 0.4rem 0.8rem;
-    min-height: 36px;
-    font-size: 0.9rem;
-  }
-
   .navbar {
     margin: 10px 10px 0;
     box-shadow: 4px 4px 0 var(--border);
@@ -284,25 +278,24 @@
   }
 
   .timeline-header {
-    margin: -1rem -1rem 1rem -1rem;
-    padding: 1rem 1rem 0.75rem 1rem;
-    top: -1px;
+    margin: 0 0 1rem;
+    padding: 0 0 0.75rem;
+    position: static;
   }
 
   .journey-map-container {
-    min-height: 400px;
+    height: 400px;
+    min-height: 0;
     box-shadow: 3px 3px 0 var(--border);
     z-index: 1;
   }
 
   #journey-map {
-    height: 400px;
+    height: 100%;
   }
 
   .map-pirate-overlay {
-    width: 100px;
-    bottom: 5px;
-    left: 5px;
+    display: none;
   }
 
   .card {
@@ -550,14 +543,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-
-  .theme-toggle {
-    top: 1rem;
-    right: 1rem;
-    width: 50px;
-    height: 50px;
-    font-size: 1.25rem;
   }
 
   .education-title {

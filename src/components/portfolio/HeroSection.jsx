@@ -91,7 +91,7 @@ export const HeroSection = () => {
           <div className="hero-image-wrapper">
             <div className="tape-sticker"></div>
             <img
-              src="assets/images/profile.JPG"
+              src="assets/images/profile.webp"
               alt="Adarsh S"
               className="hero-photo"
               width="400"

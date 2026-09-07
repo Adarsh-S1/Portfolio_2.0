@@ -173,56 +173,6 @@ requestAnimationFrame(() => {
     updateGapParallax();
 });
 
-// Highlight Parallax Effect
-const highlights = document.querySelectorAll('.highlight');
-const highlightData = new Map();
-
-highlights.forEach((highlight, index) => {
-    const direction = index % 2 === 0 ? 'left' : 'right';
-    highlight.setAttribute('data-direction', direction);
-    highlightData.set(highlight, {
-        hasStarted: false,
-        startScroll: 0,
-        duration: 100,
-        direction: direction
-    });
-});
-
-function updateHighlights() {
-    const scrollY = window.scrollY;
-    const windowHeight = window.innerHeight;
-
-    highlights.forEach(highlight => {
-        const rect = highlight.getBoundingClientRect();
-        const elementTop = rect.top + scrollY;
-        const data = highlightData.get(highlight);
-
-        // Start highlighting when element is near top of viewport
-        const triggerPoint = scrollY + windowHeight * 0.8;
-
-        if (!data.hasStarted && triggerPoint >= elementTop) {
-            data.hasStarted = true;
-            data.startScroll = scrollY;
-        }
-
-        if (data.hasStarted) {
-            const progress = Math.min(1, Math.max(0, (scrollY - data.startScroll) / data.duration));
-            highlight.style.setProperty('--highlight-progress', `${progress * 100}%`);
-        }
-
-        // Reset when scrolling back up past element
-        if (data.hasStarted && scrollY < data.startScroll - 50) {
-            data.hasStarted = false;
-            highlight.style.setProperty('--highlight-progress', '0%');
-        }
-    });
-}
-
-window.addEventListener('scroll', updateHighlights);
-requestAnimationFrame(() => {
-    updateHighlights();
-});
-
 // Language Stars Parallax Effect
 const languageItems = document.querySelectorAll('.certificate-item');
 const languageStarsData = new Map();
@@ -348,34 +298,6 @@ window.addEventListener('resize', updateJourneyTimeline);
 requestAnimationFrame(() => {
     updateJourneyTimeline();
 });
-
-// Theme Toggle
-const themeToggle = document.getElementById('theme-toggle');
-const body = document.body;
-const icon = themeToggle.querySelector('i');
-
-const currentTheme = localStorage.getItem('theme') || 'light';
-body.setAttribute('data-theme', currentTheme);
-updateIcon(currentTheme);
-
-themeToggle.addEventListener('click', () => {
-    const theme = body.getAttribute('data-theme');
-    const newTheme = theme === 'light' ? 'dark' : 'light';
-
-    body.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    updateIcon(newTheme);
-});
-
-function updateIcon(theme) {
-    if (theme === 'dark') {
-        icon.classList.remove('fa-moon');
-        icon.classList.add('fa-sun');
-    } else {
-        icon.classList.remove('fa-sun');
-        icon.classList.add('fa-moon');
-    }
-}
 
 // Smooth Scroll for Navigation
 document.querySelectorAll('.nav-link').forEach(link => {

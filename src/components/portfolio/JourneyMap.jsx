@@ -78,7 +78,7 @@ export const JourneyMap = () => {
         <rect width="100%" height="100%" fill="url(#scratches)" />
       </svg>
       <img
-        src="assets/images/pirate.png"
+        src="assets/images/pirate.webp"
         alt="Pirate"
         className="map-pirate-overlay"
         width="200"

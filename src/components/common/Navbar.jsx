@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { useTheme } from '../../context/ThemeContext';
-import { Moon, Sun } from 'lucide-react';
 
 export const Navbar = () => {
-  const { theme, toggleTheme } = useTheme();
   const [hidden, setHidden] = useState(false);
   const [lastScroll, setLastScroll] = useState(0);
 
@@ -94,14 +91,6 @@ export const Navbar = () => {
           >
             Get in Touch!
           </a>
-          <button
-            onClick={toggleTheme}
-            id="theme-toggle"
-            className="theme-toggle-nav"
-            aria-label="Toggle Theme"
-          >
-            {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-          </button>
         </div>
       </div>
     </nav>

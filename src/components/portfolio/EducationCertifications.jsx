@@ -19,7 +19,7 @@ export const EducationCertifications = () => {
               <i className="fas fa-map-marker-alt"></i> Cheruthuruthy, Thrissur, Kerala
             </p>
             <p className="text" style={{ marginTop: '8px', fontSize: '0.9rem' }}>
-              CGPA: 8.11/10
+              CGPA: 8.05/10
             </p>
           </div>
         </div>
