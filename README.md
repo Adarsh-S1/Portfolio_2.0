@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="assets/images/profile.JPG" alt="Adarsh S" width="200" style="border-radius: 50%; border: 4px solid #ffd93d;" />
+  <img src="assets/images/profile.webp" alt="Adarsh S" width="200" style="border-radius: 50%; border: 4px solid #ffd93d;" />
   
   # Hi there, I'm Adarsh S! 👋
   
@@ -100,7 +100,7 @@ My passion lies in hands-on engineering and innovation, covering the full spectr
 ---
 
 <div align="center">
-  <img src="assets/images/pirate.png" width="100" />
+  <img src="assets/images/pirate.webp" width="100" />
   
   *“Exploring the treasures of AI and Robotics”*
 </div>

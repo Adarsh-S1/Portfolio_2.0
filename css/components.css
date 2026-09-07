@@ -2,35 +2,6 @@
    Components: Navbar, Buttons, Cards, Tags
    ======================================== */
 
-.theme-toggle {
-  position: fixed;
-  top: 2rem;
-  right: 2rem;
-  width: 60px;
-  height: 60px;
-  background: var(--primary);
-  border: var(--border-width) solid var(--border);
-  box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--border);
-  cursor: pointer;
-  z-index: 200;
-  font-size: 1.5rem;
-  color: var(--text);
-  transition: all 0.2s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.theme-toggle:hover {
-  transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0 var(--border);
-}
-
-.theme-toggle:active {
-  transform: translate(4px, 4px);
-  box-shadow: none;
-}
-
 /* Navbar */
 .navbar {
   background: var(--yellow);
@@ -117,28 +88,6 @@
 }
 
 .nav-cta:hover {
-  transform: translate(3px, 3px);
-  box-shadow: 0 0 0 var(--border);
-}
-
-.theme-toggle-nav {
-  padding: 0.5rem 1rem;
-  background: var(--cyan);
-  border: var(--border-width) solid var(--border);
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--text);
-  min-height: 48px;
-  transition: all 0.2s ease;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 3px 3px 0 0 var(--border);
-}
-
-.theme-toggle-nav:hover {
   transform: translate(3px, 3px);
   box-shadow: 0 0 0 var(--border);
 }

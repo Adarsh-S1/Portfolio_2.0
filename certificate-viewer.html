@@ -103,10 +103,6 @@
             background: var(--cyan);
         }
 
-        .viewer-btn-download {
-            background: var(--accent);
-        }
-
         .viewer-body {
             flex: 1;
             display: flex;
@@ -157,9 +153,6 @@
         <div class="viewer-header">
             <span class="viewer-title" id="viewer-title">Certificate</span>
             <div class="viewer-actions">
-                <a class="viewer-btn viewer-btn-download" id="viewer-download" href="#" download title="Download PDF">
-                    <i class="fas fa-download"></i>
-                </a>
                 <a class="viewer-btn viewer-btn-back" href="index.html#education" title="Back to portfolio">
                     <i class="fas fa-arrow-left"></i>
                 </a>
@@ -177,12 +170,10 @@
 
         const iframe = document.getElementById('viewer-iframe');
         const title = document.getElementById('viewer-title');
-        const download = document.getElementById('viewer-download');
 
         if (pdfPath) {
             iframe.src = pdfPath;
             title.textContent = certName;
-            download.href = pdfPath;
             document.title = certName + ' | Adarsh S';
         } else {
             title.textContent = 'No certificate specified';

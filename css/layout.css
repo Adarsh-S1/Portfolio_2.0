@@ -217,14 +217,6 @@
   display: none;
 }
 
-body[data-theme="dark"] .progress-bar-container {
-  background: var(--bg);
-}
-
-body[data-theme="dark"] .checkpoint.active .checkpoint-dot {
-  background: var(--secondary);
-}
-
 /* Footer */
 .footer {
   margin-top: 3rem;
