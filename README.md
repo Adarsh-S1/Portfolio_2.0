@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="assets/images/profile.webp" alt="Adarsh S" width="200" style="border-radius: 50%; border: 4px solid #ffd93d;" />
+  <img src="public/assets/images/profile.webp" alt="Adarsh S" width="200" style="border-radius: 50%; border: 4px solid #ffd93d;" />
   
   # Hi there, I'm Adarsh S! 👋
   
@@ -11,7 +11,7 @@
   [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/adarsh-s-326a97311/)
   [![Email](https://img.shields.io/badge/Email-Contact-red?style=for-the-badge&logo=gmail)](mailto:adarshs112004@gmail.com)
 
-  <img src="assets/images/caffe-icon.gif" width="50" />
+  <img src="public/assets/images/caffe-icon.gif" width="50" />
   
   ## [Live Site](https://adarsh-s.netlify.app/) 
   
@@ -100,7 +100,7 @@ My passion lies in hands-on engineering and innovation, covering the full spectr
 ---
 
 <div align="center">
-  <img src="assets/images/pirate.webp" width="100" />
+  <img src="public/assets/images/pirate.webp" width="100" />
   
   *“Exploring the treasures of AI and Robotics”*
 </div>
